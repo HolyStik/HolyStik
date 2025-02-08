@@ -1,17 +1,17 @@
 # HolyStik
 
-HolyStik is a simple and beginner-friendly programming language inspired by Swift and HTML, with a subtle biblical Christian theme. It is designed to be easy to learn and supports both interpretation and compilation. The language incorporates the word **"stik"** into its syntax, making it unique while maintaining clarity.
+HolyStik is a beginner-friendly programming language inspired by Swift and HTML. It is designed for simplicity, making it easy for new developers to learn.
 
 ## Features
-- **Simple Syntax**: HolyStik is designed to be easy for new developers to understand.
-- **Mathematical Operations**: Supports addition, subtraction, multiplication, and division.
-- **Variables**: Assign and use variables with ease.
-- **Ternary Operator**: Allows conditional expressions.
-- **Loops (`stik`)**: Repeats expressions a specified number of times.
-- **Interpretation & Compilation**: Can be run as an interpreted script.
+- **Simple and Readable Syntax**: Inspired by Swift with an emphasis on clarity.
+- **Mathematical Operations**: Supports basic arithmetic.
+- **Variables**: Assign and manipulate values easily.
+- **Ternary Operator**: Supports concise conditional expressions.
+- **Repetitive Execution (`stik`)**: A unique keyword for repeating actions.
+- **Interpretation & Compilation**: Execute scripts directly or compile them.
 
 ## Installation
-Clone the HolyStik repository and compile the interpreter:
+Clone the repository and compile the HolyStik interpreter:
 
 ```sh
 git clone https://github.com/your-repo/HolyStik.git
@@ -20,15 +20,14 @@ swiftc HolyStikInterpreter.swift -o HolyStikInterpreter
 ```
 
 ## Running a HolyStik Script
-To execute a HolyStik script, provide a `.hstik` file as input:
+To run a `.hstik` script using the interpreter:
 
 ```sh
 ./HolyStikInterpreter test.hstik
 ```
 
 ## HolyStik Syntax
-Here is an example HolyStik script:
-
+### Example Script (`test.hstik`)
 ```hstik
 x = 10
 y = 5
@@ -37,50 +36,58 @@ result = z > 20 ? "High value" : "Low value"
 
 stik 3 "HolyStik rocks!"
 
-age = 25
-status = age >= 18 ? "Adult" : "Minor"
+age = 70
+status = age <= 65 ? "Adult" : "Senior"
 ```
 
 ### Expected Output:
 ```
+x = 10
+y = 5
+z = 15.0
+result = false
+Low value
 HolyStik rocks!
 HolyStik rocks!
 HolyStik rocks!
+age = 25
+status = true
+Senior
 ```
 
 ## Language Elements
 
 ### 1. **Variables**
-Variables are assigned using `=`:
+Declare variables with `=`:
 
 ```hstik
 name = "John"
 age = 30
 ```
 
-### 2. **Mathematical Expressions**
-Supports `+`, `-`, `*`, `/`, and parentheses:
+### 2. **Mathematical Operations**
+Perform arithmetic using `+`, `-`, `*`, `/`:
 
 ```hstik
 x = 5
-y = x * 3 + 2
+y = (x * 3) + 2
 ```
 
 ### 3. **Ternary Operator**
-Use `?` and `:` for quick conditional logic:
+Use `?` and `:` for conditional evaluation:
 
 ```hstik
-result = x > 10 ? "Big number" : "Small number"
+result = x > 10 ? "Big" : "Small"
 ```
 
 ### 4. **Loops (`stik`)**
-The `stik` keyword repeats an expression:
+Repeat an expression using the `stik` keyword:
 
 ```hstik
 stik 5 "Praise the Lord!"
 ```
 
-### 5. **Comparisons**
+### 5. **Comparison Operators**
 Supports `==`, `!=`, `<`, `>`, `<=`, `>=`:
 
 ```hstik
@@ -92,8 +99,3 @@ HolyStik is licensed under **AGPL-3.0**.
 
 ## Contributing
 Contributions are welcome! Submit an issue or pull request to help improve HolyStik.
-
----
-
-🔥 **HolyStik – Simple, Swift, and Divine!** 🔥
-
