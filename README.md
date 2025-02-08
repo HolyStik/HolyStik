@@ -1,6 +1,6 @@
 # HolyStik
 
-HolyStik is a beginner-friendly programming language inspired by Swift and HTML. It is designed for simplicity, making it easy for new developers to learn.
+HolyStik is a beginner-friendly programming language inspired by Swift, HTML, and Python. It is designed for simplicity, making it easy for new developers to learn.
 
 ## Features
 - **Simple and Readable Syntax**: Inspired by Swift with an emphasis on clarity.
