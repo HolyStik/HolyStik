@@ -36,7 +36,7 @@ jobs:
 
       # Upload the built executable as an artifact
       - name: Upload HolyStik Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: HolyStik-executable
           path: HolyStik
