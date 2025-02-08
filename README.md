@@ -72,12 +72,15 @@ Stik Calculator Result: -27.0
 - **Mathematical Expressions:**
   Example: `3 + 5 * (2 - 8)`
 - **Variables:**
-  Use the `let` keyword to define variables.
+  Use the `let` keyword to define variables.  
   Example: `let x = 10`
 
 ---
 
 ## Installation
+
+### Download from GitHub Actions:
+You can download the latest build from [GitHub Actions](https://github.com/0-Blu/HolyStik/actions) under the latest workflow run.
 
 ### Clone the Repository:
 ```sh
@@ -159,4 +162,3 @@ This project is licensed under the **AGPL-3.0** License. See the [LICENSE](LICEN
 ## Author
 Your Name  
 GitHub: [0-Blu](https://github.com/0-Blu)
-
