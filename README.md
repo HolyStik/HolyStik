@@ -84,7 +84,7 @@ result = x > 10 ? "Big" : "Small"
 Repeat an expression using the `stik` keyword:
 
 ```hstik
-stik 5 "Praise the Lord!"
+stik 5 "I love HolyStik!"
 ```
 
 ### 5. **Comparison Operators**
