@@ -39,7 +39,7 @@ line 0 0 30 30
 
 #### Command:
 ```sh
-$ ./HolyStik shapes.hstik
+./HolyStik shapes.hstik
 ```
 
 #### Output:
@@ -50,7 +50,7 @@ To use HolyStik in calculator mode, use the `--calc` flag followed by a mathemat
 
 #### Command:
 ```sh
-$ ./HolyStik --calc "3 + 5 * (2 - 8)"
+./HolyStik --calc "3 + 5 * (2 - 8)"
 ```
 
 #### Output:
@@ -140,7 +140,7 @@ Stik: Line drawn from (0.0, 0.0) to (30.0, 30.0).
 
 #### Input:
 ```sh
-$ ./HolyStik --calc "3 + 5 * (2 - 8)"
+./HolyStik --calc "3 + 5 * (2 - 8)"
 ```
 
 #### Output:
@@ -166,5 +166,5 @@ This project is licensed under the **AGPL-3.0** License. See the [LICENSE](LICEN
 ---
 
 ## Author
-Your Name  
+HolyStik  
 GitHub: [HolyStik](https://github.com/HolyStik)
