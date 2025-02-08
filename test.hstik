@@ -1,0 +1,7 @@
+x = 10
+y = 5
+z = (x + y) * 2
+result = z > 20 ? "High value" : "Low value"
+stik 3 "HolyStik rocks!"
+age = 25
+status = age >= 18 ? "Adult" : "Minor"
