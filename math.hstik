@@ -1,0 +1,19 @@
+# Math Operations
+let x = 10
+let y = 5
+let z = x + y * 2
+
+# Print the result of z
+z
+
+# Complex expression
+let a = (3 + 5) * (2 - 8)
+a
+
+# Division and multiplication
+let b = 20 / 4 + 3 * 2
+b
+
+# Using variables in expressions
+let c = a + b - z
+c
