@@ -81,24 +81,24 @@ Stik Calculator Result: -27.0
 
 ### Clone the Repository:
 ```sh
-git clone https://github.com/your-username/HolyStik.git
+git clone https://github.com/0-Blu/HolyStik.git
 cd HolyStik
 ```
 
 ### Build the Project:
 Ensure you have Swift installed. Run the following command to build the project:
 ```sh
-swift build
+swiftc HolyStik.swift -o HolyStik
 ```
 
 ### Run the Program:
 For graphics mode:
 ```sh
-./.build/debug/HolyStik shapes.hstik
+./HolyStik shapes.hstik
 ```
 For calculator mode:
 ```sh
-./.build/debug/HolyStik --calc "3 + 5 * (2 - 8)"
+./HolyStik --calc "3 + 5 * (2 - 8)"
 ```
 
 ---
@@ -158,5 +158,5 @@ This project is licensed under the **AGPL-3.0** License. See the [LICENSE](LICEN
 
 ## Author
 Your Name  
-GitHub: [your-username](https://github.com/your-username)
+GitHub: [0-Blu](https://github.com/0-Blu)
 
