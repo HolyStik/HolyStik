@@ -1,0 +1,4 @@
+circle 10 10 5
+rectangle 20 20 10 10
+color "red"
+line 0 0 30 30
