@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Use the latest Ubuntu environment
+    runs-on: ubuntu-22.04  # Use Ubuntu 22.04 (LTS)
 
     steps:
       # Check out the repository
