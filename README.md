@@ -80,11 +80,11 @@ Stik Calculator Result: -27.0
 ## Installation
 
 ### Download from GitHub Actions:
-You can download the latest build from [GitHub Actions](https://github.com/0-Blu/HolyStik/actions) under the latest workflow run.
+You can download the latest build from [GitHub Actions](https://github.com/HolyStik/HolyStik/actions) under the latest workflow run.
 
 ### Clone the Repository:
 ```sh
-git clone https://github.com/0-Blu/HolyStik.git
+git clone https://github.com/HolyStik/HolyStik.git
 cd HolyStik
 ```
 
@@ -161,4 +161,4 @@ This project is licensed under the **AGPL-3.0** License. See the [LICENSE](LICEN
 
 ## Author
 Your Name  
-GitHub: [0-Blu](https://github.com/0-Blu)
+GitHub: [HolyStik](https://github.com/HolyStik)
