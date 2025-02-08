@@ -1,0 +1,35 @@
+name: Build HolyStik
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull requests targeting the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu environment
+
+    steps:
+      # Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Swift
+      - name: Set up Swift
+        uses: swift-actions/setup-swift@v1
+        with:
+          swift-version: "5.7"  # Specify the Swift version
+
+      # Build the project using swiftc
+      - name: Build HolyStik
+        run: |
+          swiftc HolyStik.swift -o HolyStik
+          ls -l  # List files to verify the build output
+
+      # Optional: Run a test command to verify the build
+      - name: Test HolyStik
+        run: |
+          ./HolyStik --calc "3 + 5 * 2"
