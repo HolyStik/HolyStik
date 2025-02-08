@@ -4,6 +4,12 @@ HolyStik is a versatile tool that combines **graphics rendering** and **mathemat
 
 ---
 
+## Disclaimer
+
+This project was inspired by HolyC, but we do not endorse any statements or views expressed by its creator.
+
+---
+
 ## Features
 
 - **Graphics Mode**:
