@@ -51,7 +51,7 @@ HolyStik rocks!
 HolyStik rocks!
 HolyStik rocks!
 age = 25
-status = true
+status = false
 Senior
 ```
 
