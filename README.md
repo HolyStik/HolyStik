@@ -1,155 +1,162 @@
-# HolyStik - A Terminal Graphics Interpreter
+# HolyStik
 
-HolyStik is a simple domain-specific language (DSL) interpreter written in Swift that allows you to draw basic shapes—such as circles, rectangles, and lines—directly in your terminal. It also supports setting colors, clearing the canvas, and evaluating mathematical expressions with variable support.
+HolyStik is a versatile tool that combines **graphics rendering** and **mathematical expression evaluation**. It can interpret commands to draw shapes (circles, rectangles, lines) in a terminal-based graphics environment and also function as a calculator to evaluate mathematical expressions.
 
 ---
 
 ## Features
 
-- **Shape Drawing**: Draw circles, rectangles, and lines using simple commands.
-- **Color Management**: Set the current drawing color (for state tracking).
-- **Canvas Clearing**: Clear all shapes from the canvas with a single command.
-- **Mathematical Expressions**: Evaluate arithmetic expressions supporting addition (`+`), subtraction (`-`), multiplication (`*`), division (`/`), and parentheses.
-- **Variables**: Declare and use variables within expressions.
-- **Terminal Rendering**: Render drawn shapes as ASCII art on a terminal grid.
-- **Simple DSL**: Intuitive command syntax for quick prototyping and drawing.
+- **Graphics Mode**:
+  - Draw shapes like circles, rectangles, and lines.
+  - Set colors for shapes.
+  - Clear the canvas.
+  - Render shapes in the terminal.
+
+- **Calculator Mode**:
+  - Evaluate mathematical expressions (e.g., `3 + 5 * (2 - 8)`).
+  - Support for variables using the `let` keyword.
 
 ---
 
-## DSL Syntax
+## Usage
 
-The HolyStik language uses a straightforward syntax. Here are the primary commands:
+### Graphics Mode
+To use HolyStik in graphics mode, provide a `.hstik` file as input. The file should contain commands to draw shapes.
 
-- **Drawing Commands:**
-  - `circle <x> <y> <radius>`  
-    Draws a circle with its center at `(x, y)` and the specified `radius`.
-  
-  - `rectangle <x> <y> <width> <height>`  
-    Draws a rectangle with its top-left corner at `(x, y)` and the specified `width` and `height`.
-  
-  - `line <x1> <y1> <x2> <y2>`  
-    Draws a line from point `(x1, y1)` to point `(x2, y2)`.
-
-- **State Management:**
-  - `color "colorName"`  
-    Sets the current drawing color. The color is stored in the interpreter’s state and is applied to subsequently drawn shapes.
-  
-  - `clear`  
-    Clears all shapes from the canvas.
-
-- **Variables and Expressions:**
-  - `let <variable> = <expression>`  
-    Declares a variable with a value obtained by evaluating the provided mathematical expression.  
-    Expressions can include numbers, identifiers (previously defined variables), and arithmetic operators (`+`, `-`, `*`, `/`).
-
-### Example `.hstik` File
-
-```hstik
-color "blue"
-circle 40 12 10
-rectangle 10 5 20 10
-line 0 0 79 23
-let a = 5 + 10 * 2
+#### Example `.hstik` File:
+```plaintext
+circle 10 10 5
+rectangle 20 20 10 10
+color "red"
+line 0 0 30 30
 ```
 
-This sample file sets the drawing color to blue, draws a circle, a rectangle, a line, and declares a variable `a` with the value calculated from the expression.
+#### Command:
+```sh
+$ ./HolyStik shapes.hstik
+```
+
+#### Output:
+The program will print the actions performed (e.g., drawing shapes) and render the shapes in the terminal.
+
+### Calculator Mode
+To use HolyStik in calculator mode, use the `--calc` flag followed by a mathematical expression.
+
+#### Command:
+```sh
+$ ./HolyStik --calc "3 + 5 * (2 - 8)"
+```
+
+#### Output:
+```plaintext
+Stik Calculator Result: -27.0
+```
 
 ---
 
-## Getting Started
+## Command Syntax
 
-### Prerequisites
+### Graphics Commands
+- **Circle:** `circle <x> <y> <radius>`  
+  Example: `circle 10 10 5`
+- **Rectangle:** `rectangle <x> <y> <width> <height>`  
+  Example: `rectangle 20 20 10 10`
+- **Line:** `line <x1> <y1> <x2> <y2>`  
+  Example: `line 0 0 30 30`
+- **Color:** `color "<color_name>"`  
+  Example: `color "red"`
+- **Clear:** `clear`  
+  Clears the canvas.
 
-- **Swift 5.x or later**: Ensure that Swift is installed on your system.
-- **Platform**: macOS, Linux, or any platform that supports Swift.
-
-### Building and Running
-
-1. **Clone the Repository**
-
-   ```bash
-   git clone https://github.com/yourusername/holystik.git
-   cd holystik
-   ```
-
-2. **Build the Project**
-
-   Using the Swift Package Manager:
-   
-   ```bash
-   swift build
-   ```
-
-3. **Run the Interpreter**
-
-   Pass the path to your `.hstik` file as a command-line argument:
-   
-   ```bash
-   swift run holystik path/to/yourfile.hstik
-   ```
-
-   Alternatively, you can compile directly with `swiftc`:
-
-   ```bash
-   swiftc main.swift -o holystik
-   ./holystik path/to/yourfile.hstik
-   ```
-
-The interpreter reads the file, processes the commands, and renders the shapes as ASCII art in the terminal.
+### Calculator Commands
+- **Mathematical Expressions:**
+  Example: `3 + 5 * (2 - 8)`
+- **Variables:**
+  Use the `let` keyword to define variables.
+  Example: `let x = 10`
 
 ---
 
-## Code Structure
+## Installation
 
-- **Custom Types & Token Definitions**
-  - **Point & Size**: Structures representing coordinates and dimensions.
-  - **Token & TokenType**: Definitions used for lexical analysis of the DSL input.
+### Clone the Repository:
+```sh
+git clone https://github.com/your-username/HolyStik.git
+cd HolyStik
+```
 
-- **Shape Definitions**
-  - **Line, Circle, Rectangle**: Data structures representing the different shapes.
-  - **AnyShape**: A wrapper that pairs a shape with its color.
+### Build the Project:
+Ensure you have Swift installed. Run the following command to build the project:
+```sh
+swift build
+```
 
-- **GraphicsState**
-  - Maintains the current drawing state, including shapes, current color, and defined variables.
-
-- **MathEvaluator**
-  - Implements tokenization, the shunting yard algorithm for expression parsing, and Reverse Polish Notation (RPN) evaluation to compute arithmetic expressions.
-
-- **HolyStikInterpreter**
-  - The main interpreter class that tokenizes the DSL code, processes commands (drawing shapes, setting color, clearing, and variable declaration), and updates the graphics state accordingly.
-
-- **Terminal Renderer**
-  - Functions to render the shapes (circle, rectangle, line) onto an ASCII grid that is printed to the terminal.
-
-- **Main Function**
-  - Reads a `.hstik` file from the command line, invokes the interpreter, prints feedback messages, and renders the resulting graphics.
+### Run the Program:
+For graphics mode:
+```sh
+./.build/debug/HolyStik shapes.hstik
+```
+For calculator mode:
+```sh
+./.build/debug/HolyStik --calc "3 + 5 * (2 - 8)"
+```
 
 ---
 
-## Error Handling
+## Examples
 
-- **Syntax & Token Errors**: The interpreter checks for syntax errors and invalid tokens, reporting errors with descriptive messages.
-- **Expression Evaluation Errors**: Errors in mathematical expressions or variable lookup are captured and reported.
+### Example 1: Drawing Shapes
+
+#### Input (`shapes.hstik`):
+```plaintext
+circle 10 10 5
+rectangle 20 20 10 10
+color "red"
+line 0 0 30 30
+```
+
+#### Output:
+```plaintext
+Stik: Circle drawn at (10.0, 10.0) with radius 5.0.
+Stik: Rectangle drawn at (20.0, 20.0) with size 10.0x10.0.
+Stik: Drawing color set to red.
+Stik: Line drawn from (0.0, 0.0) to (30.0, 30.0).
+
+--- Stik Terminal Graphics ---
+
+(Terminal graphics output)
+```
+
+### Example 2: Calculator Mode
+
+#### Input:
+```sh
+$ ./HolyStik --calc "3 + 5 * (2 - 8)"
+```
+
+#### Output:
+```plaintext
+Stik Calculator Result: -27.0
+```
 
 ---
 
 ## Contributing
 
-Contributions, bug reports, and feature requests are welcome. Feel free to open an issue or submit a pull request on GitHub.
+Contributions are welcome! If you'd like to contribute, please follow these steps:
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Submit a pull request.
 
 ---
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the **AGPL-3.0** License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
-## Contact
-
-For any questions or suggestions, please contact [your-email@example.com].
-
----
-
-Enjoy creating terminal graphics with HolyStik!
+## Author
+Your Name  
+GitHub: [your-username](https://github.com/your-username)
 
