@@ -33,3 +33,10 @@ jobs:
       - name: Test HolyStik
         run: |
           ./HolyStik --calc "3 + 5 * 2"
+
+      # Upload the built executable as an artifact
+      - name: Upload HolyStik Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: HolyStik-executable
+          path: HolyStik
